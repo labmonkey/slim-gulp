@@ -1,0 +1,23 @@
+{
+  "name": "slim-gulp",
+  "version": "0.1.0",
+  "description": "Starter kit for gulp",
+  "homepage": "https://github.com/labmonkey/slim-gulp",
+  "author": {
+    "name": "Paweł Derehajło",
+    "email": "derehajlo@gmail.com"
+  },
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.0"
+  }
+}

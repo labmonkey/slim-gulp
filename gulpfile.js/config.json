@@ -1,0 +1,29 @@
+{
+  "tasks": "./tasks",
+  "subtasks": "./subtasks",
+  "plugins": {
+    "gulp-load-plugins": {
+      "pattern": [
+        "gulp",
+        "gulp-*",
+        "gulp.*",
+        "path",
+        "contains-path",
+        "imagemin-*",
+        "del",
+        "main-bower-files"
+      ]
+    }
+  },
+  "globs": {
+    "css": "css/**/*.{scss,sass}",
+    "js": "js/**/*.js",
+    "img": "img/**/*.{jpg,jpeg,png,gif}",
+    "svg": "svg/**/*.svg",
+    "fonts": "fonts/**/*"
+  },
+  "path": {
+    "from": "./src",
+    "to": "./dist"
+  }
+}
