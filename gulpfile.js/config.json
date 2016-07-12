@@ -1,4 +1,5 @@
 {
+  "skeleton" : true,
   "tasks": "./tasks",
   "subtasks": "./subtasks",
   "plugins": {
