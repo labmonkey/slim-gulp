@@ -13,6 +13,8 @@ global.onError = function (error) {
     })(error);
 
     $.util.log(error);
+
+    this.emit('end');
 };
 
 requireDir(config.tasks);

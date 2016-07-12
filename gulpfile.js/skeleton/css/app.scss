@@ -1,5 +1,9 @@
 @import "variables";
 @import "base";
 @import "typography";
+// Layout
+@import "layout/header";
+@import "layout/body";
+@import "layout/footer";
 // Components
 @import "components/buttons";
