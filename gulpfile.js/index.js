@@ -17,5 +17,5 @@ global.onError = function (error) {
     this.emit('end');
 };
 
-requireDir(config.tasks);
-requireDir(config.subtasks);
+requireDir('./tasks');
+requireDir('./subtasks');

@@ -1,7 +1,5 @@
 {
   "skeleton" : true,
-  "tasks": "./tasks",
-  "subtasks": "./subtasks",
   "plugins": {
     "gulp-load-plugins": {
       "pattern": [
