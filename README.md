@@ -31,22 +31,20 @@ Simply create `./gulp.json` right next to `./package.json` with content similar 
 
 Main tasks
 -
-##### `gulp`
-
-##### `gulp build`
-
-##### `gulp watch`
++ **`gulp`** - builds `skeleton` in `/src` folder if it doesn't exist, `cleans` the `/dist` folder and runs `gulp build`.
++ **`gulp build`** - runs as sequence [`'styles'`, `'scripts'`, `'fonts'`] and then [`'images'`, `'svg'`]
++ **`gulp watch`** - watches all folders [/styles, /scripts, /images, /svg, /fonts] in `/src`
 
 Subtasks
 -
-+ `clean` - cleans the **/dist** folder from all files
-+ `fonts` - simply copies fonts from **/src** folder to **/dist**. No additional steps.
-+ `images` - minifies and copies only modified images from **/src** folder to **/dist**
++ `clean` - cleans the `/dist` folder from all files.
++ `fonts` - simply copies fonts from `/src` folder to`/dist`. No additional steps.
++ `images` - minifies ([pngquant](https://www.npmjs.com/package/imagemin-pngquant)) and copies only modified images from `/src` folder to `/dist`.
 + `scripts`
-    + `scripts:app` - combines and minifies all files in `src/js` folder into one `app.min.js` file.
-    + `scripts:bower` - automatically finds bower js files, combines them and minifies into one `libs.min.js` file.
+    + `scripts:app` - combines and minifies ([uglify](https://www.npmjs.com/package/gulp-uglify)) all files in `src/js` folder into one `app.min.js` file.
+    + `scripts:bower` - automatically finds bower js files ([main-bower-files](https://www.npmjs.com/package/gulp-main-bower-files)), combines them and minifies into one `libs.min.js` file.
 + `skeleton` - if the `src` folder doesn't exist creates it and default file/directory structure. Useful when creating new project.
-+ `styles` - combines and minifies all `.scss` files. It's using autoprefixer, shorthand and clean css.
++ `styles` - combines and minifies all `.scss` files. It's using [sass](https://www.npmjs.com/package/gulp-sass),  [autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer), [shorthand](https://www.npmjs.com/package/gulp-shorthand) and [clean css](https://www.npmjs.com/package/gulp-clean-css).
 + `svg`
-    + `svg:minify`
-    + `svg:png`
+    + `svg:minify` - minifies all svg's  ([imagemin + svgo](https://www.npmjs.com/package/imagemin-svgo)).
+    + `svg:png` - converts all svg's to png's ([svg2png](https://www.npmjs.com/package/gulp-svg2png)) in `img/fallback` folder so they can be used in browsers without svg support.
