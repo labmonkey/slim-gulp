@@ -10,20 +10,25 @@ Slim-gulp is doing 70% of the things that other gulpfiles do but it sticks to th
 It's for developers who want to stick to the main gulp goodness out of the box. If you need something that just combines and minifies js, css and images then slim-gulp is for you.
 
 ### What it lacks
-Local server, any static html related plugins, browser sync, live reload (will be added), dev and production environment separation, github pages deployment. In short these are all pure frontend developer stuff.
+Local server, any static html related plugins, dev and production environment separation, github pages deployment. In short these are all pure frontend developer stuff.
 
 ### Configuration
-Eveything visible in `./gulpfile.js/config.json` can be overriden by `./gulp.json` file. Actually the only setting you will propably want to change is src and dist path. At least that was the whole idea of simplicity here.
+Eveything visible in `./gulpfile.js/config.json` can be overriden by `./gulp.json` file. Actually the only setting you will propably want to change is src and dist path or browser-sync url. At least that was the whole idea of simplicity here.
 
 Simply create `./gulp.json` right next to `./package.json` with content similar to:
 ```json
 {
+  "server" : true,
   "path": {
     "from": "./src",
     "to": "./dist"
   }
 }
 ```
+You set set `server` as:
+- `false` - it will disable browser-sync
+- `true` - it will run local server with static files
+- `any url string` - for ex. "http://mywebsite.com". It will run in proxy mode targeting provided website.
 
 ### Main tasks
 + **`gulp`** - builds `skeleton` in `/src` folder if it doesn't exist, `cleans` the `/dist` folder and runs `gulp build`.
@@ -31,6 +36,7 @@ Simply create `./gulp.json` right next to `./package.json` with content similar 
 + **`gulp watch`** - watches all folders [/styles, /scripts, /images, /svg, /fonts] in `/src`
 
 ### Subtasks
++ `browser-sync` - runs [browser-sync](https://www.npmjs.com/package/browser-sync) local server with static files or via proxy. Can be configured as stated in 'Configuration' section.
 + `clean` - cleans the `/dist` folder from all files.
 + `fonts` - simply copies fonts from `/src` folder to`/dist`. No additional steps.
 + `images` - minifies ([pngquant](https://www.npmjs.com/package/imagemin-pngquant)) and copies only modified images from `/src` folder to `/dist`.
