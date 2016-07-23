@@ -3,7 +3,8 @@ gulp.task('svg:png', function () {
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.changed($.path.join(config.path.to, 'img', 'fallback')))
         .pipe($.svg2png())
-        .pipe(gulp.dest($.path.join(config.path.to, 'img', 'fallback')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'img', 'fallback')))
+        .pipe($.browserSync.stream());
 });
 
 gulp.task('svg:minify', function () {
@@ -17,7 +18,8 @@ gulp.task('svg:minify', function () {
             ],
             use: [$.imagemin.svgo()]
         }))
-        .pipe(gulp.dest($.path.join(config.path.to, 'svg')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'svg')))
+        .pipe($.browserSync.stream());
 });
 
 var svgTask = function (cb) {

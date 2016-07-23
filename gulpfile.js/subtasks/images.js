@@ -7,7 +7,8 @@ var imagesTask = function () {
             optimizationLevel: 3,
             use: [$.imageminPngquant()]
         }))
-        .pipe(gulp.dest($.path.join(config.path.to, 'img')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'img')))
+        .pipe($.browserSync.stream());
 };
 
 gulp.task('images', imagesTask);

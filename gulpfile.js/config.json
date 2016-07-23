@@ -1,5 +1,6 @@
 {
-  "skeleton" : true,
+  "skeleton": true,
+  "server": true,
   "plugins": {
     "gulp-load-plugins": {
       "pattern": [
@@ -10,12 +11,13 @@
         "contains-path",
         "imagemin-*",
         "del",
-        "main-bower-files"
+        "main-bower-files",
+        "browser-sync"
       ]
     }
   },
   "globs": {
-    "css": "css/**/*.{scss,sass}",
+    "css": "css/**/*.{css,scss,sass}",
     "js": "js/**/*.js",
     "img": "img/**/*.{jpg,jpeg,png,gif}",
     "svg": "svg/**/*.svg",

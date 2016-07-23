@@ -19,7 +19,8 @@ var stylesTask = function () {
             extname: '.min.css'
         }))
         .pipe($.sourcemaps.write('.'))
-        .pipe(gulp.dest($.path.join(config.path.to, 'css')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'css')))
+        .pipe($.browserSync.stream());
 };
 
 gulp.task('styles', stylesTask);

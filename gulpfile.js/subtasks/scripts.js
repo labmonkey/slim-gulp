@@ -7,7 +7,8 @@ gulp.task('scripts:app', function () {
         .pipe($.rename({
             extname: '.min.js'
         }))
-        .pipe(gulp.dest($.path.join(config.path.to, 'js')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'js')))
+        .pipe($.browserSync.stream());
 });
 
 gulp.task('scripts:bower', function () {
@@ -19,7 +20,8 @@ gulp.task('scripts:bower', function () {
         .pipe($.rename({
             extname: '.min.js'
         }))
-        .pipe(gulp.dest($.path.join(config.path.to, 'js')));
+        .pipe(gulp.dest($.path.join(config.path.to, 'js')))
+        .pipe($.browserSync.stream());
 });
 
 var scriptsTask = function (cb) {
