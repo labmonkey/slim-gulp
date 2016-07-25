@@ -3,6 +3,7 @@ var stylesTask = function () {
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.sourcemaps.init())
         .pipe($.include())
+        .pipe($.concat('app.css'))
         .pipe($.sass({
             includePaths: ['sass'],
             outputStyle: 'compressed'
