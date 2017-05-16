@@ -5,5 +5,5 @@ var fontsTask = function () {
         .pipe(gulp.dest($.path.join(config.path.to, 'fonts')));
 };
 
-gulp.task('fonts', fontsTask);
+gulp.task('build:fonts', fontsTask);
 module.exports = fontsTask;

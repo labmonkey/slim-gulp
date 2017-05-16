@@ -11,5 +11,5 @@ var imagesTask = function () {
         .pipe($.browserSync.stream());
 };
 
-gulp.task('images', imagesTask);
+gulp.task('build:images', imagesTask);
 module.exports = imagesTask;

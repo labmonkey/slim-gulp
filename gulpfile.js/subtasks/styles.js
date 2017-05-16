@@ -24,5 +24,5 @@ var stylesTask = function () {
         .pipe($.browserSync.stream());
 };
 
-gulp.task('styles', stylesTask);
+gulp.task('build:styles', stylesTask);
 module.exports = stylesTask;
