@@ -1,6 +1,7 @@
 {
   "skeleton": true,
   "server": true,
+  "production" : false,
   "plugins": {
     "gulp-load-plugins": {
       "pattern": [
