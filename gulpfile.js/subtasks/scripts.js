@@ -1,4 +1,4 @@
-gulp.task('scripts:app', function () {
+gulp.task('build:scripts:app', function () {
     return gulp.src($.path.join(config.path.from, config.globs.js))
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.include())
@@ -11,7 +11,7 @@ gulp.task('scripts:app', function () {
         .pipe($.browserSync.stream());
 });
 
-gulp.task('scripts:bower', function () {
+gulp.task('build:scripts:bower', function () {
     return gulp.src($.mainBowerFiles())
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.include())
@@ -25,8 +25,8 @@ gulp.task('scripts:bower', function () {
 });
 
 var scriptsTask = function (cb) {
-    $.sequence(['scripts:bower'], ['scripts:app'])(cb);
+    $.sequence(['build:scripts:bower'], ['build:scripts:app'])(cb);
 };
 
-gulp.task('scripts', scriptsTask);
+gulp.task('build:scripts', scriptsTask);
 module.exports = scriptsTask;

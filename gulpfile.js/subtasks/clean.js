@@ -4,5 +4,5 @@ var cleanTask = function () {
     ], {force: true});
 };
 
-gulp.task('clean', cleanTask);
+gulp.task('init:clean', cleanTask);
 module.exports = cleanTask;

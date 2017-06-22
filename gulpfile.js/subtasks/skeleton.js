@@ -6,5 +6,5 @@ var skeletonTask = function () {
     }
 };
 
-gulp.task('skeleton', skeletonTask);
+gulp.task('init:skeleton', skeletonTask);
 module.exports = skeletonTask;

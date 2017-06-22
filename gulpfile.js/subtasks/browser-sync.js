@@ -25,5 +25,5 @@ var browserSyncTask = function () {
     return true;
 };
 
-gulp.task('browser-sync', browserSyncTask);
+gulp.task('watch:browser-sync', browserSyncTask);
 module.exports = browserSyncTask;

@@ -1,4 +1,4 @@
-gulp.task('svg:png', function () {
+gulp.task('build:svg:png', function () {
     return gulp.src($.path.join(config.path.from, config.globs.svg))
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.changed($.path.join(config.path.to, 'img', 'fallback')))
@@ -7,7 +7,7 @@ gulp.task('svg:png', function () {
         .pipe($.browserSync.stream());
 });
 
-gulp.task('svg:minify', function () {
+gulp.task('build:svg:minify', function () {
     return gulp.src($.path.join(config.path.from, config.globs.svg))
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.changed($.path.join(config.path.to, 'svg')))
@@ -23,8 +23,8 @@ gulp.task('svg:minify', function () {
 });
 
 var svgTask = function (cb) {
-    $.sequence(['svg:minify'], ['svg:png'])(cb);
+    $.sequence(['build:svg:minify'], ['build:svg:png'])(cb);
 };
 
-gulp.task('svg', svgTask);
+gulp.task('build:svg', svgTask);
 module.exports = svgTask;

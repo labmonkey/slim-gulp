@@ -3,6 +3,7 @@ var stylesTask = function () {
         .pipe($.plumber({errorHandler: onError}))
         .pipe(!config.production ? $.sourcemaps.init() : $.uril.noop())
         .pipe($.include())
+        .pipe($.concat('app.css'))
         .pipe($.sass({
             includePaths: ['sass'],
             outputStyle: 'compressed'
@@ -24,5 +25,5 @@ var stylesTask = function () {
         .pipe($.browserSync.stream());
 };
 
-gulp.task('styles', stylesTask);
+gulp.task('build:styles', stylesTask);
 module.exports = stylesTask;

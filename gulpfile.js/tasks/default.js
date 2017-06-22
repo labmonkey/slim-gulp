@@ -1,5 +1,6 @@
 var defaultTask = function (cb) {
-    $.sequence(['skeleton'], ['clean'], ['build'])(cb);
+    $.util.log("Use any of the following tasks:");
+    return $.taskListing(cb);
 };
 
 gulp.task('default', defaultTask);
