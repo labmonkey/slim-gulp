@@ -3,7 +3,7 @@ gulp.task('scripts:app', function () {
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.include())
         .pipe($.concat('app.js'))
-        .pipe($.uglify())
+        .pipe(config.production ? $.uglify() : $.util.noop())
         .pipe($.rename({
             extname: '.min.js'
         }))
@@ -16,7 +16,7 @@ gulp.task('scripts:bower', function () {
         .pipe($.plumber({errorHandler: onError}))
         .pipe($.include())
         .pipe($.concat('libs.js'))
-        .pipe($.uglify())
+        .pipe(config.production ? $.uglify() : $.util.noop())
         .pipe($.rename({
             extname: '.min.js'
         }))
